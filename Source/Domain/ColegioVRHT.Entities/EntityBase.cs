@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ColegioVRHT.Entities
 {
-    public class EntityBase
+    public abstract class EntityBase
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int codEmpresa { get; set; }
+        public bool FlagEstado { get; set; }
     }
 }

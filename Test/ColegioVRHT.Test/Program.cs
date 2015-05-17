@@ -11,10 +11,7 @@ namespace ColegioVRHT.Test
     {
         static void Main(string[] args)
         {
-            Alumno a1 = new Alumno();
-            a1.name = "pulguita";
-            a1.last_name = "enanito";
-            a1.ToString();
+          
         }
     }
 }
