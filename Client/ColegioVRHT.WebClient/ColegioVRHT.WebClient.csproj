@@ -227,16 +227,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Source\Domain\ColegioVRHT.Entities\ColegioVRHT.Entities.csproj">
-      <Project>{e378a5df-35e9-422b-927d-124d13c72782}</Project>
-      <Name>ColegioVRHT.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Source\Infrastructure\ColegioVRHT.Repository\ColegioVRHT.Repository.csproj">
-      <Project>{53bf9a0b-8f0e-4fa4-9a3c-3c2a8cd77fc7}</Project>
-      <Name>ColegioVRHT.Repository</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
