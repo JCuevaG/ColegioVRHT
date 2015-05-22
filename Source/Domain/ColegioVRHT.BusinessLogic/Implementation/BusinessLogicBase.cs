@@ -1,5 +1,6 @@
 ﻿using ColegioVRHT.BusinessLogic.Interface;
 using ColegioVRHT.Entities;
+using ColegioVRHT.Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,41 +12,41 @@ namespace ColegioVRHT.BusinessLogic.Implementation
     public class BusinessLogicBase<TEntity> : IBusinessLogicBase<TEntity> 
         where TEntity : EntityBase
     {
-        private readonly IBusinessLogicBase<TEntity> _BusinessLogicBase;
+        private readonly IRepositoryBase<TEntity> _IRepositoryBase;
 
-        public BusinessLogicBase(IBusinessLogicBase<TEntity> _BusinessLogicBase)
+        public BusinessLogicBase(IRepositoryBase<TEntity> _IRepositoryBase)
         {
-            this._BusinessLogicBase = _BusinessLogicBase;
+            this._IRepositoryBase = _IRepositoryBase;
         }
 
         public void Add(TEntity entity)
         {
-           _BusinessLogicBase.Add(entity);
+            _IRepositoryBase.Add(entity);
         }
 
         public TEntity GetById(int Id)
         {
-            return _BusinessLogicBase.GetById(Id);
+            return _IRepositoryBase.GetById(Id);
         }
 
         public IQueryable<TEntity> Get()
         {
-            return _BusinessLogicBase.Get();
+            return _IRepositoryBase.Get();
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            return _BusinessLogicBase.GetAll();
+            return _IRepositoryBase.GetAll();
         }
 
         public void Update(TEntity entity)
         {
-            _BusinessLogicBase.Update(entity);
+            _IRepositoryBase.Update(entity);
         }
 
         public void Remove(TEntity entity)
         {
-            _BusinessLogicBase.Remove(entity);
+            _IRepositoryBase.Remove(entity);
         }
 
     }

@@ -1,0 +1,102 @@
+﻿@model ColegioVRHT.WebClient.Models.AlumnoViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>AlumnoViewModel</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombres, 
+                                                    new { 
+                                                            @class = "control-label col-md-2" 
+                                                        })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Nombres, 
+                                                    new {
+                                                            @maxlength="2" 
+                                                        })
+                @Html.ValidationMessageFor(model => model.Nombres)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdSede, 
+                                                    new { 
+                                                            @class = "control-label col-md-2" 
+                                                        })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.IdSede)
+                @Html.ValidationMessageFor(model => model.IdSede)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Apellidos, 
+                                                    new { 
+                                                            @class = "control-label col-md-2" 
+                                                        })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Apellidos)
+                @Html.ValidationMessageFor(model => model.Apellidos)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sexo, 
+                                                    new {
+                                                            @class = "control-label col-md-2" 
+                                                        })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Sexo)
+                @Html.ValidationMessageFor(model => model.Sexo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Documento, 
+                                                    new {
+                                                            @class = "control-label col-md-2" 
+                                                        })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Documento)
+                @Html.ValidationMessageFor(model => model.Documento)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Direccion, 
+                                                    new {
+                                                            @class = "control-label col-md-2" 
+                                                        })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Direccion)
+                @Html.ValidationMessageFor(model => model.Direccion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -2,7 +2,7 @@
 
 namespace ColegioVRHT.Entities
 {
-    public class TipoDocumento : EntityBase
+    public class TypeDocument : EntityBase
     {
         public String Descripcion { get; set; }
 

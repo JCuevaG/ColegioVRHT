@@ -40,10 +40,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementation\BusinessLogicBase.cs" />
+    <Compile Include="Implementation\PersonBusinessLogic.cs" />
     <Compile Include="Interface\IBusinessLogicBase.cs" />
+    <Compile Include="Interface\IPersonBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\ColegioVRHT.Repository\ColegioVRHT.Repository.csproj">
+      <Project>{53bf9a0b-8f0e-4fa4-9a3c-3c2a8cd77fc7}</Project>
+      <Name>ColegioVRHT.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ColegioVRHT.Entities\ColegioVRHT.Entities.csproj">
       <Project>{e378a5df-35e9-422b-927d-124d13c72782}</Project>
       <Name>ColegioVRHT.Entities</Name>

@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Context\ColegioVRHTContext.cs" />
     <Compile Include="Implementation\RepositoryBase.cs" />
+    <Compile Include="Interface\IPersonRepository.cs" />
     <Compile Include="Interface\IRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

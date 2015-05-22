@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace ColegioVRHT.Entities
 {
     
-    public class Persona : EntityBase
+    public class Person : EntityBase
     {
         public string Nombres { get; set; }
         public int IdSede { get; set; }
-        public TipoDocumento TipoDocumento { get; set; }
+        public TypeDocument TipoDocumento { get; set; }
         public string Apellidos { get; set; }
         public string Sexo { get; set; }
         public string Documento { get; set; }
