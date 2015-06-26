@@ -20,9 +20,12 @@ namespace ColegioVRHT.BusinessLogic.Implementation
             this._IRepositoryBase = _IRepositoryBase;
         }
 
-        public void Add(TEntity entity)
+        public int Add(TEntity entity)
         {
-            _IRepositoryBase.Add(entity);
+            int Id = 0;
+            
+            Id  = _IRepositoryBase.Add(entity);
+            return Id;
         }
 
         public TEntity GetById(int Id)

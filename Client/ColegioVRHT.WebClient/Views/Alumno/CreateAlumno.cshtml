@@ -4,7 +4,6 @@
     ViewBag.Title = "Create Alumno";
 }
 
-<h2>Create Alumno</h2>
 
 @*BeginForm("Action")   *@
 @using (Html.BeginForm("CreateAlumno", "Alumno", FormMethod.Post, new { @id="IdFormularioCreateAlumno"}))
@@ -25,7 +24,7 @@
                                                                     @title = "Nombres del Alumno",
                                                                     @placeholder="Ingrese Datos",
                                                                     @class = "form-control"
-
+                                                                    
                                                                 })
                         @Html.ValidationMessageFor(model => model.Nombres)
                     </div>
@@ -84,9 +83,9 @@
 
             <div class="form-inline">
                 <div class="col-md-5">
-                    @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.LabelFor(model => model.SexoViewModel, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-offset-2">
-                        @Html.DropDownListFor(model => model.Sexo.Id, new SelectList(Model.ListaSexo, "Id", "Descripcion"),
+                        @Html.DropDownListFor(model => model.IdSexo, new SelectList(Model.ListaSexo, "Id", "Descripcion"),
                                                                                                                                 new
                                                                                                                                 {
                                                                                                                                     @title = "Estado Civil",

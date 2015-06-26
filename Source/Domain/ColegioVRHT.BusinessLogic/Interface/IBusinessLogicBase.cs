@@ -11,7 +11,7 @@ namespace ColegioVRHT.BusinessLogic.Interface
         where TEntity : EntityBase
     {
 
-        void Add(TEntity entity);
+        int Add(TEntity entity);
 
         TEntity GetById(int Id);
 

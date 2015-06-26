@@ -71,7 +71,8 @@ namespace ColegioVRHT.WebClient.Models
 
         //public virtual ICollection<Nota> Nota { get; set; }
 
-        public virtual SexoViewModel Sexo { get; set; }
+        [Display(Name="Sexo")]
+        public virtual SexoViewModel SexoViewModel { get; set; }
         public virtual IEnumerable<SexoViewModel> ListaSexo { get; set; }
         
 

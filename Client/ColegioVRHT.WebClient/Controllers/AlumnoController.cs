@@ -43,12 +43,9 @@ namespace ColegioVRHT.WebClient.Controllers
         public ActionResult CreateAlumno()
         {
             AlumnoViewModel viewModel = new AlumnoViewModel();
-            viewModel.Sexo = new SexoViewModel();
             viewModel.ListaSexo = new List<SexoViewModel>();
-            
-             var model = _ISexoBusinessLogic.GetAll().ToList();
-             viewModel.ListaSexo = Mapper.Map<List<SexoViewModel>>(model);
-            
+            var model = _ISexoBusinessLogic.GetAll().ToList();
+            viewModel.ListaSexo = Mapper.Map<List<SexoViewModel>>(model);
             return PartialView(viewModel);
         }
 
@@ -56,23 +53,22 @@ namespace ColegioVRHT.WebClient.Controllers
         [HttpPost]
         public ActionResult CreateAlumno(AlumnoViewModel model)
         {
-            //if (ModelState.IsValid)
-            //{
-            
-                model.FechaNacimiento = DateTime.Now;
+            int Identity = 0;
+            String Confirmacion = Messages.RegistroError;
 
-                model.IdSexo = model.Sexo.Id;
-                model.Sexo = null;      
-                var alumno = Mapper.Map<AlumnoViewModel, Alumno>(model);
+            if (ModelState.IsValid)
+            {
+               var alumno = Mapper.Map<AlumnoViewModel, Alumno>(model);
+               Identity= _IAlumnoBusinessLogic.Add(alumno);
 
+               if (Identity > 0)
+               {
+                   Confirmacion= Messages.RegistroCorrecto;                   
+               }
+                
+            }
 
-                _IAlumnoBusinessLogic.Add(alumno);
-                return Content("Registro Correcto!!!");
-            //}
-
-            
-            //_IPersonBusinessLogic.Add(asda);
-            //return Content("Error ");
+           return Content(Confirmacion);
         }
 
         [HttpGet]
