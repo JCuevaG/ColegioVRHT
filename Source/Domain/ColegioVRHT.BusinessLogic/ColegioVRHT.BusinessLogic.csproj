@@ -39,10 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementation\AlumnoBusinessLogic.cs" />
     <Compile Include="Implementation\BusinessLogicBase.cs" />
+    <Compile Include="Implementation\SexoBusinessLogic.cs" />
     <Compile Include="Implementation\PersonBusinessLogic.cs" />
+    <Compile Include="Implementation\SedeBusinessLogic.cs" />
+    <Compile Include="Implementation\TypePersonBusinessLogic.cs" />
+    <Compile Include="Interface\IAlumnoBusinessLogic.cs" />
     <Compile Include="Interface\IBusinessLogicBase.cs" />
+    <Compile Include="Interface\ISexoBusinessLogic.cs" />
     <Compile Include="Interface\IPersonBusinessLogic.cs" />
+    <Compile Include="Interface\ISedeBusinessLogic.cs" />
+    <Compile Include="Interface\ITypePersonBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

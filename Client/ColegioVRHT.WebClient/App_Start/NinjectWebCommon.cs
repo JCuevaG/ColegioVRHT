@@ -10,6 +10,11 @@ namespace ColegioVRHT.WebClient.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using ColegioVRHT.BusinessLogic.Interface;
+    using ColegioVRHT.BusinessLogic.Implementation;
+    using ColegioVRHT.Repository;
+    using ColegioVRHT.Repository.Interface;
+    using ColegioVRHT.Repository.Implementation;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +66,21 @@ namespace ColegioVRHT.WebClient.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<ColegioVRHTContext>().ToSelf().InRequestScope();
+
+            kernel.Bind(typeof(IBusinessLogicBase<>)).To(typeof(BusinessLogicBase<>)).InRequestScope();
+            kernel.Bind<IPersonBusinessLogic>().To<PersonBusinessLogic>();
+            kernel.Bind<IAlumnoBusinessLogic>().To<AlumnoBusinessLogic>();
+            //kernel.Bind<IAlumnoRepository, IAlumnoBusinessLogic>().To<AlumnoBusinessLogic<,>>();
+            kernel.Bind<ISexoBusinessLogic>().To<SexoBusinessLogic>();
+            //kernel.Bind<ISedeBusinessLogic>().To<SedeBusinessLogic>();
+
+            kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<,>)).InRequestScope();
+            kernel.Bind<IPersonRepository>().To<PersonRepository>().InRequestScope();
+            kernel.Bind<IAlumnoRepository>().To<AlumnoRepository>().InRequestScope();
+            kernel.Bind<ISexoRepository>().To<SexoRepository>().InRequestScope();
+            //kernel.Bind<ISedeRepository>().To<SedeRepository>().InRequestScope();
+
         }        
     }
 }

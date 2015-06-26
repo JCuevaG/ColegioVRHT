@@ -10,7 +10,7 @@ namespace ColegioVRHT.Repository.Interface
     public interface IRepositoryBase<TEntity> where TEntity : EntityBase
     {
 
-        void Add(TEntity entity);
+        int Add(TEntity entity);
 
         TEntity GetById(int Id);
 

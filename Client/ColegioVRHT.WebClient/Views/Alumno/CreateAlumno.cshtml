@@ -1,0 +1,264 @@
+﻿@model ColegioVRHT.WebClient.Models.AlumnoViewModel
+
+@{
+    ViewBag.Title = "Create Alumno";
+}
+
+<h2>Create Alumno</h2>
+
+@*BeginForm("Action")   *@
+@using (Html.BeginForm("CreateAlumno", "Alumno", FormMethod.Post, new { @id="IdFormularioCreateAlumno"}))
+{
+    
+    @Html.AntiForgeryToken()
+    <fieldset >
+        <legend> Datos </legend>
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+
+            <div class="form-inline">
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Nombres, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-offset-2">
+                        @Html.TextBoxFor(model => model.Nombres, new
+                                                                {
+                                                                    @title = "Nombres del Alumno",
+                                                                    @placeholder="Ingrese Datos",
+                                                                    @class = "form-control"
+
+                                                                })
+                        @Html.ValidationMessageFor(model => model.Nombres)
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Apellidos, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-offset-1">
+                        @Html.TextBoxFor(model => model.Apellidos, new
+                                                                    {
+                                                                        @title = "Apellidos",
+                                                                        @placeholder = "Ingrese Datos",
+                                                                        @class = "form-control"
+
+                                                                    })
+                        @Html.ValidationMessageFor(model => model.Apellidos)
+                    </div>
+                </div>
+
+                @*Esta linea es para dar espacios*@
+                <div class="col-md-11"><br /> </div>
+
+            </div>
+
+            <div class="form-inline">
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.NombreApoderado, htmlAttributes: new { @class = "control-label col-md-3   " })
+                    <div class="col-md-offset-2">
+                        @Html.TextBoxFor(model => model.NombreApoderado, new
+                                                                        {
+                                                                            @title = "Nombre del Apoderado",
+                                                                            @class = "form-control",
+                                                                            @placeholder = "Ingrese Datos"
+                                                                        })
+                        @Html.ValidationMessageFor(model => model.NombreApoderado)
+                    </div>
+                </div>
+                
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.DNI, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-offset-2">
+                        @Html.TextBoxFor(model => model.DNI, new
+                                                            {
+                                                                @Title ="DNI",
+                                                                @placeholder = "Ingrese un número de DNI",
+                                                                @class = "form-control"
+                                                            })
+                        @Html.ValidationMessageFor(model => model.DNI)
+                    </div>
+                </div>
+
+                @*Esta linea es para dar espacios*@
+                <div class="col-md-11"><br /> </div>
+            </div>
+
+            <div class="form-inline">
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-offset-2">
+                        @Html.DropDownListFor(model => model.Sexo.Id, new SelectList(Model.ListaSexo, "Id", "Descripcion"),
+                                                                                                                                new
+                                                                                                                                {
+                                                                                                                                    @title = "Estado Civil",
+                                                                                                                                    @Class = "form-control"
+
+                                                                                                                                })
+                    </div>
+                </div>
+
+
+                @*<div class="col-md-5">
+                    @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-offset-2">
+                        @Html.TextBoxFor(model => model.Sexo., new
+                                                                {
+                                                                    @title = "Sexo",
+                                                                    @placeholder = "M OR F",
+                                                                    @class = "form-control",
+                                                                    @maxlength = "1"
+                                                              
+
+                                                                })
+                        @Html.ValidationMessageFor(model => model.Sexo)
+                    </div>
+                </div>*@
+
+                @*Esta linea es para dar espacios*@
+                <div class="col-md-11"><br /> </div>
+            </div>
+
+            <div class="form-inline">
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Edad, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-offset-2">
+                        @Html.TextBoxFor(model => model.Edad, new {
+                                                                @title="Edad",
+                                                                @class = "form-control",
+                                                                @placeholder="Ingrese Datos"
+                                                              })
+                        @Html.ValidationMessageFor(model => model.Edad)
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.FechaNacimiento, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-offset-2">
+                        @Html.TextBoxFor(model => model.FechaNacimiento, new
+                                                                        {
+                                                                            @title ="Fecha de Nacimiento",
+                                                                            @id = "FechaNacimiento",
+                                                                            @class = "form-control",
+                                                                            @placeholder="Seleccione una fecha"
+                                                                        })
+                        @Html.ValidationMessageFor(model => model.FechaNacimiento)
+                    </div>
+                </div>
+                @*Esta linea es para dar espacios*@
+                <div class="col-md-11"><br /> </div>
+            </div>
+
+            <div class="form-inline">
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.CorreoPersonal, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-offset-2">
+
+                        @Html.TextBoxFor(model => model.CorreoPersonal, new {
+                                                                            @title = "Correo Personal",
+                                                                            @class="form-control",
+                                                                            @placeholder="Ingrese Dato"
+                                                                         })
+                        @Html.ValidationMessageFor(model => model.CorreoPersonal)
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.CorreoCorporativo, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-offset-2">
+                        @Html.TextBoxFor(model => model.CorreoCorporativo, new {
+                                                                                @title = "Correo Corporativo",
+                                                                                @class = "form-control",
+                                                                                @placeholder="hola@como.estas"
+                                                                            })
+                        @Html.ValidationMessageFor(model => model.CorreoCorporativo)
+                    </div>
+                </div>
+
+                @*Esta linea es para dar espacios*@
+                <div class="col-md-11"><br /> </div>
+
+            </div>
+
+            <div class="form-inline">
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-offset-2">
+                        @Html.TextBoxFor(model => model.Telefono, new { 
+                                                                        @title = "Telefono",
+                                                                        @class = "form-control",
+                                                                        @placeholder ="Ingrese un número: 01-563214"
+                                                                        })
+                        @Html.ValidationMessageFor(model => model.Telefono)
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Celular, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-offset-2">
+                        @Html.TextBoxFor(model => model.Celular, new { 
+                                                                        @title = "Celular",
+                                                                        @class = "form-control" ,
+                                                                        @placeholder = "Ingrese un número: 94-5563214"
+                                                                     })
+                        @Html.ValidationMessageFor(model => model.Celular)
+                    </div>
+                </div>
+
+                @*Esta linea es para dar espacios*@
+                <div class="col-md-11"><br /> </div>
+            </div>
+     
+            <div class="form-inline">
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.FechaEgreso, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-offset-2">
+                        @Html.TextBoxFor(model => model.FechaEgreso, new { 
+                                                                            @title = "Fecha Egreso",
+                                                                            @class = "form-control",
+                                                                            @placeholder="Ingrese Fecha"
+                                                                         })
+                        @Html.ValidationMessageFor(model => model.FechaEgreso)
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Codigo, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-offset-2">
+                        @Html.TextBoxFor(model => model.Codigo, new {
+                                                                       @title = "Codigo" ,
+                                                                       @class="form-control"
+                                                                    })
+                        @Html.ValidationMessageFor(model => model.Codigo)
+                    </div>
+                </div>
+                <div class="col-md-11"> <br /> </div>
+
+            </div>
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.FlagEstado, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.CheckBoxFor(model => model.FlagEstado)
+                    @Html.ValidationMessageFor(model => model.FlagEstado)
+                </div>
+            </div>*@
+
+            <div class="form-inline">
+                <div class="col-md-10">
+                    <input type="button" value="Create" class="btn btn-primary" id="btnCrear" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

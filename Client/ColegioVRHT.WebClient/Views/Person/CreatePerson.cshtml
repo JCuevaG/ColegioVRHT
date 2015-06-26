@@ -1,0 +1,115 @@
+﻿@*@model ColegioVRHT.WebClient.Models.PersonViewModel
+
+@{
+    ViewBag.Title = "CreatePerson";
+}
+
+<h2>CreatePerson</h2>
+
+
+
+@using (Html.BeginForm("CreatePerson", "Person",FormMethod.Post, new { @id = "IdFrmPersona"}))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Person</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombres, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Nombres, new
+                                                             {
+                                                                 @style = "text-transform: uppercase;"
+                                                             })
+                @Html.ValidationMessageFor(model => model.Nombres)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Apellidos, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Apellidos, new
+                                                             {
+                                                                 @style = "text-transform: uppercase;"
+                                                             })
+                @Html.ValidationMessageFor(model => model.Apellidos)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Direccion, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Direccion, new
+                                                             {
+                                                                 @style = "text-transform: uppercase;"
+                                                             })
+                @Html.ValidationMessageFor(model => model.Direccion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Documento, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Documento, new
+                                                             {
+                                                                 @style = "text-transform: uppercase;"
+                                                             })
+                @Html.ValidationMessageFor(model => model.Documento)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdTipoPersona, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.TypePerson.Id, new SelectList(Model.ListTypePerson, "Id", "Descripcion"))
+                @Html.ValidationMessageFor(model => model.TypePerson.Id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdSede, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model =>model.IdSede, new SelectList(Model.ListSede, "Id", "Descripcion"))
+                @Html.ValidationMessageFor(model => model.IdSede)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FlagEstado, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(model => model.FlagEstado)
+                @Html.ValidationMessageFor(model => model.FlagEstado)
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" onclick="createperson()" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+   var  UrlAction = {
+        URLPerson: '@Url.Action("CreatePerson")'
+        }
+
+</script>
+<script src="~/Scripts/ViewScripts/Person.js"></script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@
+

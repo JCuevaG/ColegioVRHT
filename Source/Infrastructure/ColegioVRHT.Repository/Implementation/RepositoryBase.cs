@@ -4,9 +4,11 @@ using ColegioVRHT.Entities;
 using System.Data.Entity;
 using System.Linq;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 
 namespace ColegioVRHT.Repository.Implementation
 {
+
     public class RepositoryBase<TEntity, TContext> : IRepositoryBase<TEntity>
         where TEntity : EntityBase
         where TContext : DbContext
@@ -18,10 +20,27 @@ namespace ColegioVRHT.Repository.Implementation
             Context = context;
         }
 
-        public void Add(TEntity entity)
+        public int Add(TEntity entity)
         {
-            Context.Set<TEntity>().Add(entity);
-            Context.SaveChanges();
+            int Id = 0;
+            try{
+
+                    
+                    Context.Set<TEntity>().Add(entity);
+                    Id = Context.SaveChanges();
+                }
+
+            catch (DbEntityValidationException dbEx)
+            {
+		        foreach (var validationErrors in dbEx.EntityValidationErrors)
+		        {
+		            foreach (var validationError in validationErrors.ValidationErrors)
+		            {
+		                System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+		            }
+		        }
+            }
+            return Id;
         }
 
         public TEntity GetById(int Id)

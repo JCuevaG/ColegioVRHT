@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ColegioVRHT.Repository.Interface
 {
-    public interface IPersonRepository : IRepositoryBase<Person>
+    public interface IPersonRepository : IRepositoryBase<Persona>
     {
 
     }

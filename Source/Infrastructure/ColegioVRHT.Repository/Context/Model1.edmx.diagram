@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5bc93465cca648d1855bf7f4a6dc6c48" Name="Diagram1">
+        <EntityTypeShape EntityType="BD_COLEGIO_VRHTModel.Alumno" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_COLEGIO_VRHTModel.Docente" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_COLEGIO_VRHTModel.Materia" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_COLEGIO_VRHTModel.Persona" Width="1.5" PointX="6" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_COLEGIO_VRHTModel.Sede" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_COLEGIO_VRHTModel.TipoDocumento" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_COLEGIO_VRHTModel.TipoPersona" Width="1.5" PointX="3.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_COLEGIO_VRHTModel.AlumnoDocente" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_COLEGIO_VRHTModel.MateriaAlumno" Width="1.5" PointX="8.25" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="BD_COLEGIO_VRHTModel.FK__Alumno__IdTipoDo__1367E606" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_COLEGIO_VRHTModel.FK__AlumnoDoc__IdAlu__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_COLEGIO_VRHTModel.FK__AlumnoDoc__IdDoc__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_COLEGIO_VRHTModel.FK__Docente__IdTipoD__164452B1" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_COLEGIO_VRHTModel.FK__MateriaAl__IdPer__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_COLEGIO_VRHTModel.FK__Persona__IdSede__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_COLEGIO_VRHTModel.FK__Persona__IdTipoD__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_COLEGIO_VRHTModel.FK__Persona__IdTipoP__38996AB5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

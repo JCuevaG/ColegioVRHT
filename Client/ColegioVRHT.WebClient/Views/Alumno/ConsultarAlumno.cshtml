@@ -1,0 +1,128 @@
+﻿@model IEnumerable<ColegioVRHT.WebClient.Models.AlumnoViewModel>
+
+@{
+    ViewBag.Title = "ConsultarAlumno";
+}
+
+<h2>ConsultarAlumno</h2>
+
+<p>
+    <input type="button" value="Create" id="modal" class="btn btn-success" />
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreApoderado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DNI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorreoPersonal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorreoCorporativo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Celular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaEgreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlagEstado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreApoderado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DNI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CorreoPersonal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CorreoCorporativo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Celular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaEgreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlagEstado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+
+@* Este div sirve para llamar al modal *@
+<div id="modalito"> 
+
+</div>
+
+@*// Llamar al action que se encuentra en el controller Alumno*@
+<script>
+    var UrlAction = {
+        Create: '@Url.Action("CreateAlumno")' 
+        
+
+    }
+</script>
+<script src="~/ViewScripts/Alumno/Alumno.js"></script>

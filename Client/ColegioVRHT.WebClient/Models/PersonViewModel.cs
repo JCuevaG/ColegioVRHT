@@ -10,17 +10,42 @@ namespace ColegioVRHT.WebClient.Models
 {
     public class PersonViewModel
     {
-        [Required(ErrorMessage = "Name Required")]
-        [StringLength(50, ErrorMessage = "The input is Max Legth 50")]
-        public string Names { get; set; }
+        //[Required(ErrorMessage = "Name Required")]
+        //[StringLength(50, ErrorMessage = "The input is Max Legth 50")]
+        //[DisplayName("Names")]
 
-        [DisplayName("Sede")]
+
+        public int Id { get; set; }
+
+        public int IdTipoDocumento { get; set; }
+
         public int IdSede { get; set; }
-        public TypeDocument TypeDocument { get; set; }
-        public TypePerson TypePerson { get; set; }
-        public string Last { get; set; }
+
+        public int IdTipoPersona { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Nombres { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Apellidos { get; set; }
+
+        [Required]
+        [StringLength(1)]
         public string Sexo { get; set; }
-        public string Document { get; set; }
-        public string Direction { get; set; }
+
+        [Required]
+        [StringLength(12)]
+        public string Documento { get; set; }
+
+        [StringLength(150)]
+        public string Direccion { get; set; }
+
+        public bool FlagEstado { get; set; }
+
+        //public virtual ICollection<MateriaAlumno> MateriaAlumno { get; set; }
+
+        
     }
 }

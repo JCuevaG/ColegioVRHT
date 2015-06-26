@@ -50,9 +50,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\ColegioVRHTContext.cs" />
+    <Compile Include="Implementation\AlumnoRepository.cs" />
+    <Compile Include="Implementation\SexoRepository.cs" />
+    <Compile Include="Implementation\PersonRepository.cs" />
     <Compile Include="Implementation\RepositoryBase.cs" />
+    <Compile Include="Implementation\SedeRepository.cs" />
+    <Compile Include="Implementation\TypePersonRepository.cs" />
+    <Compile Include="Interface\IAlumnoRepository.cs" />
+    <Compile Include="Interface\ISexoRepository.cs" />
     <Compile Include="Interface\IPersonRepository.cs" />
     <Compile Include="Interface\IRepositoryBase.cs" />
+    <Compile Include="Interface\ISedeRepository.cs" />
+    <Compile Include="Interface\ITypePersonRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

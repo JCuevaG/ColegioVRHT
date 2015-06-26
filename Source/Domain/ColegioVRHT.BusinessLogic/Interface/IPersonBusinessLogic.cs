@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ColegioVRHT.BusinessLogic.Interface
 {
-    public interface IPersonBusinessLogic :IBusinessLogicBase<Person>
+    public interface IPersonBusinessLogic :IBusinessLogicBase<Persona>
     {
     }
 }

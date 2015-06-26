@@ -20,8 +20,9 @@ namespace ColegioVRHT.WebClient.AutoMapper
 
         protected override void Configure()
         {
-            Mapper.CreateMap<Person, AlumnoViewModel>();
-            
+            Mapper.CreateMap<Alumno, AlumnoViewModel>();
+            Mapper.CreateMap<Persona, PersonViewModel>();
+            Mapper.CreateMap<Sexo, SexoViewModel>();
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ColegioVRHT.BusinessLogic.Implementation
 {
-    public class PersonBusinessLogic : BusinessLogicBase<Person>, IPersonBusinessLogic
+    public class PersonBusinessLogic : BusinessLogicBase<Persona>, IPersonBusinessLogic
     {
         public readonly IPersonRepository _IPersonRepository;
         public PersonBusinessLogic(IPersonRepository _IPersonRepository)

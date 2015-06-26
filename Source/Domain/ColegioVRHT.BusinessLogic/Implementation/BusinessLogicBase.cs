@@ -14,6 +14,7 @@ namespace ColegioVRHT.BusinessLogic.Implementation
     {
         private readonly IRepositoryBase<TEntity> _IRepositoryBase;
 
+        
         public BusinessLogicBase(IRepositoryBase<TEntity> _IRepositoryBase)
         {
             this._IRepositoryBase = _IRepositoryBase;
